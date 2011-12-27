@@ -37,7 +37,6 @@ void merge(int a[], int left, int mid, int right)
   for(ai=left; ai<=right; ai++)
     {
       a[ai]=b[ai];
-      printf("Temp a[%d] = %d\n", ai, a[ai]);
     }
 
 }
