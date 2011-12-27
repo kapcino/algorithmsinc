@@ -62,6 +62,7 @@ void mergesort(int a[], int size)
 int main()
 {
   int a[6] = {8, 2, 4, 7, 5, 9};
+  print(a,6);
   mergesort(a, 6);
   print(a,6);
   return 0;
