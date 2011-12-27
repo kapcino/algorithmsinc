@@ -57,5 +57,6 @@ void reverse2(struct node* head)
       cur = next;
       next = next2;
     }
-  head = next;
+
+  head = cur;
 }
