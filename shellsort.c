@@ -1,17 +1,37 @@
 #include "util.h"
 
-void shellsort (int a[], int n) 
+void shellsort (int a[], int n)
+{
+  int d, temp, i;
+  d=n/2;
+  while (d>=1)
+    {
+      for (i=0;i<n-d;i++)
+	{
+	  if (a[i]>a[i+d])
+	    {
+	      temp=a[i];
+	      a[i]=a[i+d];
+	      a[i+d]=temp;
+	    }
+	}
+      if(d==1)	return;
+      d=d/2.0+0.5;
+    }
+}
+
+void shellsort2(int a[], int n)
 {
   int h, i, j, k;
-  for (h = n; h /= 2;) 
+  for (h = n; h /= 2;)
     {
       printf("h=%d ", h);
-      for (i = h; i < n; i++) 
+      for (i = h; i < n; i++)
 	{
 	  printf("i=%d ", i);
 	  k = a[i];
 	  printf("k=a[i]=%d ", k);
-	  for (j = i; j >= h && k < a[j - h]; j -= h) 
+	  for (j = i; j >= h && k < a[j - h]; j -= h)
 	    {
 	      printf("\nj=%d ", j);
 	      a[j] = a[j - h];
@@ -23,7 +43,6 @@ void shellsort (int a[], int n)
       printf("\n");
     }
 }
-
 
 int main(int argc, char* argv[])
 {
