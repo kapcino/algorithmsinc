@@ -7,15 +7,15 @@ void shellsort (int a[], int n)
   while (d>=1)
     {
       for (i=0;i<n-d;i++)
-	{
-	  if (a[i]>a[i+d])
-	    {
-	      temp=a[i];
-	      a[i]=a[i+d];
-	      a[i+d]=temp;
-	    }
-	}
-      if(d==1)	return;
+        {
+          if (a[i]>a[i+d])
+            {
+              temp=a[i];
+              a[i]=a[i+d];
+              a[i+d]=temp;
+            }
+        }
+      if(d==1)  return;
       d=d/2.0+0.5;
     }
 }
@@ -27,19 +27,19 @@ void shellsort2(int a[], int n)
     {
       printf("h=%d ", h);
       for (i = h; i < n; i++)
-	{
-	  printf("i=%d ", i);
-	  k = a[i];
-	  printf("k=a[i]=%d ", k);
-	  for (j = i; j >= h && k < a[j - h]; j -= h)
-	    {
-	      printf("\nj=%d ", j);
-	      a[j] = a[j - h];
-	      printf("a[j]=%d ", a[j]);
-	    }
-	  a[j] = k;
-	  printf("\na[j]=k=%d ", a[j]);
-	}
+        {
+          printf("i=%d ", i);
+          k = a[i];
+          printf("k=a[i]=%d ", k);
+          for (j = i; j >= h && k < a[j - h]; j -= h)
+            {
+              printf("\nj=%d ", j);
+              a[j] = a[j - h];
+              printf("a[j]=%d ", a[j]);
+            }
+          a[j] = k;
+          printf("\na[j]=k=%d ", a[j]);
+        }
       printf("\n");
     }
 }
