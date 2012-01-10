@@ -36,7 +36,7 @@ void quicksort(int a[], int len)
 int partition(int a[], int lo, int hi)
 {
   int i=lo, j=hi, h;
-  int pivotValue=a[i];
+  int pivotValue=a[lo];
 
   do
     {
@@ -54,11 +54,10 @@ int partition(int a[], int lo, int hi)
     }
   while(i<=j);
   
-  h=a[i];
-  a[i]=pivotValue;
-  pivotValue=h;
+  a[lo]=a[j];
+  a[j]=pivotValue;
 
-  return i;
+  return j;
 }
 
 void recursive_quicksort(int a[], int lo, int hi)
