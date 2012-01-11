@@ -40,8 +40,8 @@ int partition(int a[], int lo, int hi)
 
   do
     {
-      while(a[i]<pivotValue) i++;
-      while(a[j]>pivotValue) j--;
+      while(a[i]<=pivotValue) i++;
+      while(a[j]>=pivotValue) j--;
       
       if(i<=j)
 	{
@@ -66,6 +66,7 @@ void recursive_quicksort(int a[], int lo, int hi)
   if(lo < hi)
     {
       pivot = partition(a, lo, hi);
+      printf("%d\n", pivot);
       recursive_quicksort(a, lo, pivot-1);
       recursive_quicksort(a, pivot+1, hi);
     }
