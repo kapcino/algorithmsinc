@@ -42,10 +42,10 @@ int partition(int a[], int lo, int hi)
     int i=lo, j=hi, h;
     int pivotValue=a[lo];
 
-    do
+    while (i <= j)
     {
-        while(a[i]<=pivotValue) i++;
-        while(a[j]>pivotValue) j--;
+        while((i <= hi) && a[i]<=pivotValue) i++;
+        while((j >= lo) && a[j]>pivotValue) j--;
       
         if(i<=j)
         {
@@ -56,7 +56,6 @@ int partition(int a[], int lo, int hi)
             j--;
         }
     }
-    while(i<=j);
   
     a[lo]=a[j];
     a[j]=pivotValue;
@@ -83,11 +82,23 @@ void quicksort2(int a[], int len)
 
 int main(int argc, char* argv[])
 {
-    int a[]={1, 8, 4, 3, -4, 93, 23, 43, 7};
-    int len = sizeof(a)/sizeof(a[0]);
-    print(a, len);
-    quicksort2(a, len);
-    print(a, len);
+    int a[]={2, 1};
+    int lena = sizeof(a)/sizeof(a[0]);
+    print(a, lena);
+    quicksort2(a, lena);
+    print(a, lena);
+
+    int b[]={3, 1, 4, 5, 9, 2, 6, 8, 7 };
+    int lenb = sizeof(b)/sizeof(b[0]);
+    print(b, lenb);
+    quicksort2(b, lenb);
+    print(b, lenb);
+
+    int c[]={1, 8, 4, 3, -4, 93, 23, 43, 7};
+    int lenc = sizeof(c)/sizeof(c[0]);
+    print(c, lenc);
+    quicksort2(c, lenc);
+    print(c, lenc);
 
     return 0;
 }
