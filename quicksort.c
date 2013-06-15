@@ -45,7 +45,7 @@ int partition(int a[], int lo, int hi)
     do
     {
         while(a[i]<=pivotValue) i++;
-        while(a[j]>=pivotValue) j--;
+        while(a[j]>pivotValue) j--;
       
         if(i<=j)
         {
@@ -86,7 +86,7 @@ int main(int argc, char* argv[])
     int a[]={1, 8, 4, 3, -4, 93, 23, 43, 7};
     int len = sizeof(a)/sizeof(a[0]);
     print(a, len);
-    quicksort(a, len);
+    quicksort2(a, len);
     print(a, len);
 
     return 0;
