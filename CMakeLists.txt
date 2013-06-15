@@ -11,4 +11,4 @@ add_executable (reverselinklist reverselinklist.c)
 add_executable (selectionsort selectionsort.c)
 add_executable (shellsort shellsort.c)
 add_executable (stack_array stack_array.c)
-
+add_executable (quicksort2 quicksort2.c)
